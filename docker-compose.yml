@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+    airbyte:
+      image: phamtranlinhchi/ab:latest
+      container_name: airbyte-abctl
+      network_mode: host
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+      stdin_open: true
+      tty: true
+      depends_on:
+        - postgres_db
+      command: >
+        bash -c "abctl local install && abctl local credentials --email \"chi.pham@svtech.com.vn\" --password \"juniper@123\" && tail -f /dev/null"
+    postgres_db:
+        image: postgres:13.5
+        container_name: PostgresCount
+        restart: always
+        environment:
+            - POSTGRES_USER=admin
+            - POSTGRES_PASSWORD=juniper@123
+            - POSTGRES_DB=airbyte
+        volumes:
+            - postgres_db:/var/lib/postgresql/data
+        ports:
+            - '5432:5432'
+volumes:
+    postgres_db:
+        driver: local
