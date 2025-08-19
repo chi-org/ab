@@ -1,11 +1,8 @@
 # Usage
-#   Start:              docker compose up
-#   With helpers:       docker compose -f docker-compose.yml -f ./dev/docker-compose.dev.yml up
+#   Start:              docker compose up -d
 #   Stop:               docker compose down
-#   Destroy:            docker compose -f docker-compose.yml -f ./dev/docker-compose.dev.yml down -v --remove-orphans
-#   Reset everything:  ./reset.sh
 
-name: supabase
+name: superstack
 
 services:
   airbyte:
@@ -16,11 +13,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     stdin_open: true
     tty: true
-#    depends_on:
-#      db:
-#        condition: service_healthy
     command: >
-      bash -c "abctl local install && abctl local credentials --email \"chi.pham@svtech.com.vn\" --password \"juniper@123\" && tail -f /dev/null"
+      bash -c "abctl local install && abctl local credentials && tail -f /dev/null"
   
   metabase:
     image: metabase/metabase:latest
