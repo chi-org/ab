@@ -31,7 +31,7 @@ vi ab.env # modify your docker account to prevent docker pull image limitation f
    - port: 8008
    - username: juniper
    - password: juniper@123
-   - postgres username: postgres
+   - postgres username: postgres.sb
    - postgres password: Juniper@123
 3. Metabase:
    - port: 8888
