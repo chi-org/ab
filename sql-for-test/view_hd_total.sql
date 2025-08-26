@@ -1,6 +1,7 @@
 
 CREATE OR REPLACE VIEW public.merge_h__total_view AS
 SELECT
+    "Source",
     "Hợp đồng",
     "Loại HĐ",
     "Sale",
@@ -17,15 +18,14 @@ SELECT
     "SN",
     NULL::varchar AS "SN bảo hành (nếu có)",
     NULL::varchar AS "Thời hạn BH customer (tháng)",
-    "Service Level 1",
-    "Service Level 2",
+    "Service Level Customer",
+    "Service Level Vendor",
     "Customer Start Date",
     "Customer warranty expiry date",
     "Customer technical support expiry date",
     "Vendor Warranty expiry date",
     "Vendor_Contract_ID",
     NULL::text AS "Vendor_Contract_ID__License_s_chassis_",
-    NULL::varchar AS "Service Level",
     "Thời hạn bảo hành (tháng)",
     "Thời hạn bảo hành hãng (tháng)",
     "Vendor Start Date",
@@ -42,6 +42,7 @@ FROM merge_h__cho_thue_view
 
 UNION ALL
 SELECT
+    "Source",
     "Số hợp đồng/PO" AS "Hợp đồng",
     "Loại HĐ",
     "Sale",
@@ -58,15 +59,14 @@ SELECT
     "SN",
     "SN bảo hành (nếu có)",
     "Thời hạn BH customer (tháng)",
-    "Service Level 1",
-    "Service Level 2",
+    "Service Level Customer",
+    "Service Level Vendor",
     "Customer Start Date",
     "Customer warranty expiry date",
     "Customer technical support expiry date",
     "Vendor Warranty expiry date",
     "Vendor_Contract_ID",
     "Vendor_Contract_ID__License_s_chassis_",
-    "Service Level",
     NULL::varchar AS "Thời hạn bảo hành (tháng)",
     "Thời hạn bảo hành hãng (tháng)",
     "Vendor Start Date",
@@ -83,6 +83,7 @@ FROM merge_h__dich_vu_view
 
 UNION ALL
 SELECT
+    "Source",
     "Hợp đồng",
     "Loại HĐ",
     "Sale",
@@ -99,15 +100,14 @@ SELECT
     "SN",
     "SN bảo hành (nếu có)",
     "Thời hạn BH customer (tháng)",
-    "Service Level 1",
-    "Service Level 2",
+    "Service Level Customer",
+    "Service Level Vendor",
     "Customer Start Date",
     "Customer warranty expiry date",
     "Customer technical support expiry date",
     "Vendor Warranty expiry date",
     "Vendor_Contract_ID",
     NULL::text AS "Vendor_Contract_ID__License_s_chassis_",
-    NULL::varchar AS "Service Level",
     NULL::varchar AS "Thời hạn bảo hành (tháng)",
     "Thời hạn bảo hành hãng (tháng)",
     "Vendor Start Date",
@@ -122,4 +122,4 @@ SELECT
     "Giá trị HĐ"
 FROM merge_h__mua_ban_view;
 
--- DROP VIEW public.merge_h__total_view
+-- DROP VIEW public.merge_h__total_view;
