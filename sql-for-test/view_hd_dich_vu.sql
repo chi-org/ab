@@ -28,7 +28,7 @@ SELECT
     handle_date_text("Vendor_End_Date__dd_mm_yyyy_")  AS "Vendor End Date",
     "GAP_bao_hanh__thang_" as "GAP bảo hành (tháng)",
     "GAP_HTKT__thang_" as "GAP HTKT (tháng)",
-    "Ngay_nhan_thong_tin_tu_PM" AS "Ngày nhận thông tin từ PM",
+    handle_date_text("Ngay_nhan_thong_tin_tu_PM") AS "Ngày nhận thông tin từ PM",
     "HTKT",
     "Thong_bao_sale_SDM" as "Thông báo sale/SDM"
 FROM public."db4_H__Dich_Vu";
@@ -64,7 +64,7 @@ SELECT
     handle_date_text("Vendor_End_Date__dd_mm_yyyy_")  AS "Vendor End Date",
     "GAP_bao_hanh__thang_" as "GAP bảo hành (tháng)",
     "GAP_HTKT__thang_" as "GAP HTKT (tháng)",
-    "Ngay_nhan_thong_tin_tu_SE_SDM" AS "Ngày nhận thông tin từ SE/SDM",
+    handle_date_text("Ngay_nhan_thong_tin_tu_SE_SDM") AS "Ngày nhận thông tin từ SE/SDM",
     "HTKT",
     "Thong_bao_sale_SDM__Y_N_" as "Thông báo sale/SDM"
 FROM public."db5_H__Dich_Vu";
@@ -100,7 +100,7 @@ SELECT
     handle_date_text("Vendor_End_Date__dd_mm_yyyy_")  AS "Vendor End Date",
     "GAP_bao_hanh__thang_" as "GAP bảo hành (tháng)",
     "GAP_HTKT__thang_" as "GAP HTKT (tháng)",
-    "Ngay_nhan_thong_tin_tu_PM" AS "Ngày nhận thông tin từ PM",
+    handle_date_text("Ngay_nhan_thong_tin_tu_PM") AS "Ngày nhận thông tin từ PM",
     "HTKT",
     "Thong_bao_sale_SDM___ien_ngay_thong_bao_" as "Thông báo sale/SDM"
 FROM public."db6_H__dich_vu";

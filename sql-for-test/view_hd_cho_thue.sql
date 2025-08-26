@@ -25,7 +25,7 @@ SELECT
     handle_date_text("Vendor_End_Date__dd_mm_yyyy_") AS "Vendor End Date",
     "GAP_bao_hanh__thang_" as "GAP bảo hành (tháng)",
     "GAP_HTKT__thang_" as "GAP HTKT (tháng)",
-    "Ngay_nhan_thong_tin_tu_PM" AS "Ngày nhận thông tin từ PM"
+    handle_date_text("Ngay_nhan_thong_tin_tu_PM") AS "Ngày nhận thông tin từ PM"
 FROM public."db4_H__cho_thue___Sua_chua";
 
 -- DROP VIEW public.db4_H__cho_thue_view
@@ -57,7 +57,7 @@ SELECT
     handle_date_text("Vendor_End_Date__dd_mm_yyyy_") AS "Vendor End Date",
     "GAP_bao_hanh__thang_" as "GAP bảo hành (tháng)",
     "GAP_HTKT__thang_" as "GAP HTKT (tháng)",
-    "Ngay_nhan_thong_tin_tu_PM" AS "Ngày nhận thông tin từ PM"
+    handle_date_text("Ngay_nhan_thong_tin_tu_PM") AS "Ngày nhận thông tin từ PM"
 FROM public."db5_H__cho_thue___Sua_chua";
 
 -- DROP VIEW public.db5_H__cho_thue_view
@@ -93,7 +93,7 @@ SELECT
     handle_date_text("Vendor_End_Date__dd_mm_yyyy_") AS "Vendor End Date",
     "GAP_bao_hanh__thang_" as "GAP bảo hành (tháng)",
     "GAP_HTKT__thang_" as "GAP HTKT (tháng)",
-    "Ngay_nhan_thong_tin_tu_PM" AS "Ngày nhận thông tin từ PM"
+    handle_date_text("Ngay_nhan_thong_tin_tu_PM") AS "Ngày nhận thông tin từ PM"
 FROM public."db6_H__cho_thue___Sua_chua";
 
 -- DROP VIEW public.db6_H__cho_thue_view
@@ -188,7 +188,7 @@ SELECT
     "Customer technical support expiry date"::date,
     "Vendor Warranty expiry date"::date,
     "Vendor_Contract_ID",
-    "Service Level",
+    "Service Level Vendor",
     "Thời hạn bảo hành (tháng)",
     "Thời hạn bảo hành hãng (tháng)",
     "Vendor Start Date"::date,
