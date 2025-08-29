@@ -3,16 +3,25 @@ DECLARE
   part1 int;
   part2 int;
 BEGIN
-  -- Nếu không khớp định dạng dd/mm/yyyy hay mm/dd/yyyy thì trả về NULL
+  -- Case YYYYMMDD
+  IF date_text ~ '^\d{8}$' THEN
+    BEGIN
+      d := to_date(date_text, 'YYYYMMDD');
+      RETURN d;
+    EXCEPTION WHEN others THEN
+      RETURN NULL;
+    END;
+  END IF;
+
+  -- If not dd/mm/yyyy or mm/dd/yyyy return NULL
   IF date_text !~ '^\d{2}/\d{2}/\d{4}$' THEN
     RETURN NULL;
   END IF;
 
-  -- Lấy phần 1 (ngày hoặc tháng) và phần 2 (tháng hoặc ngày)
   part1 := split_part(date_text, '/', 1)::int;
   part2 := split_part(date_text, '/', 2)::int;
 
-  -- Nếu phần thứ 2 > 12 ⇒ đây là ngày ⇒ định dạng là MM/DD/YYYY
+  -- MM/DD/YYYY
   IF part2 > 12 THEN
     BEGIN
       d := to_date(date_text, 'MM/DD/YYYY');
@@ -21,7 +30,7 @@ BEGIN
       RETURN NULL;
     END;
   ELSE
-    -- Mặc định coi là DD/MM/YYYY
+    -- DD/MM/YYYY
     BEGIN
       d := to_date(date_text, 'DD/MM/YYYY');
       RETURN d;

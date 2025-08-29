@@ -1,0 +1,28 @@
+-- Remember to add src_table as an argument
+declare
+    main_table text := format('main_%s', src_table);
+    create_sql text;
+    insert_sql text;
+begin
+    -- 1. Create main_table if not existed
+    if not exists (
+        select 1 from information_schema.tables 
+        where table_schema = 'public' and table_name = main_table
+    ) then
+        create_sql := format(
+            'create table public.%I (like public.%I including all)', 
+            main_table, src_table
+        );
+        execute create_sql;
+    end if;
+
+    -- 2. Truncate main_table
+    execute format('truncate table public.%I', main_table);
+
+    -- 3. Insert data from src_table to main_table
+    insert_sql := format(
+        'insert into public.%I select * from public.%I', 
+        main_table, src_table
+    );
+    execute insert_sql;
+end;
