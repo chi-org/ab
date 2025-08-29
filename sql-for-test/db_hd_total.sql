@@ -124,20 +124,20 @@ FROM merge_h__mua_ban_view;
 
 -- DROP VIEW public.merge_h__total_view;
 
--- DROP ALL
+-- DROP ALL VIEWS
 -- DROP VIEW public.merge_h__total_view;
 
 -- DROP VIEW public.merge_h__mua_ban_view;
--- DROP VIEW public.db4_H__mua_ban_view;
--- DROP VIEW public.db5_H__mua_ban_view;
--- DROP VIEW public.db6_H__mua_ban_view;
+-- DROP VIEW public.main_db4_H__mua_ban_view;
+-- DROP VIEW public.main_db5_H__mua_ban_view;
+-- DROP VIEW public.main_db6_H__mua_ban_view;
 
 -- DROP VIEW public.merge_h__dich_vu_view;
--- DROP VIEW public.db4_h_dich_vu_view;
--- DROP VIEW public.db5_h_dich_vu_view;
--- DROP VIEW public.db6_h_dich_vu_view;
+-- DROP VIEW public.main_db4_h_dich_vu_view;
+-- DROP VIEW public.main_db5_h_dich_vu_view;
+-- DROP VIEW public.main_db6_h_dich_vu_view;
 
 -- DROP VIEW public.merge_h__cho_thue_view;
--- DROP VIEW public.db4_H__cho_thue_view;
--- DROP VIEW public.db5_H__cho_thue_view;
--- DROP VIEW public.db6_H__cho_thue_view;
+-- DROP VIEW public.main_db4_H__cho_thue_view;
+-- DROP VIEW public.main_db5_H__cho_thue_view;
+-- DROP VIEW public.main_db6_H__cho_thue_view;

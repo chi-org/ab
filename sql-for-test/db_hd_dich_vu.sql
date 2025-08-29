@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW public.db4_h_dich_vu_view AS
+CREATE OR REPLACE VIEW public.main_db4_h_dich_vu_view AS
 SELECT
     'db4_HĐ_dich_vu'::varchar as "Source",
     "So_hop__ong__PO" as "Số hợp đồng/PO",
@@ -31,11 +31,11 @@ SELECT
     handle_date_text("Ngay_nhan_thong_tin_tu_PM") AS "Ngày nhận thông tin từ PM",
     "HTKT",
     "Thong_bao_sale_SDM" as "Thông báo sale/SDM"
-FROM public."db4_H__Dich_Vu";
+FROM public."main_db4_H__Dich_Vu";
 
--- DROP VIEW public.db4_h_dich_vu_view
+-- DROP VIEW public.main_db4_h_dich_vu_view
 
-CREATE OR REPLACE VIEW public.db5_h_dich_vu_view AS
+CREATE OR REPLACE VIEW public.main_db5_h_dich_vu_view AS
 SELECT
     'db5_HĐ_dich_vu'::varchar as "Source",
     "So_H_" as "Số hợp đồng/PO",
@@ -67,11 +67,11 @@ SELECT
     handle_date_text("Ngay_nhan_thong_tin_tu_SE_SDM") AS "Ngày nhận thông tin từ SE/SDM",
     "HTKT",
     "Thong_bao_sale_SDM__Y_N_" as "Thông báo sale/SDM"
-FROM public."db5_H__Dich_Vu";
+FROM public."main_db5_H__Dich_Vu";
 
--- DROP VIEW public.db5_h_dich_vu_view
+-- DROP VIEW public.main_db5_h_dich_vu_view
 
-CREATE OR REPLACE VIEW public.db6_h_dich_vu_view AS
+CREATE OR REPLACE VIEW public.main_db6_h_dich_vu_view AS
 SELECT
     'db6_HĐ_dich_vu'::varchar as "Source",
     "Hop__ong" as "Số hợp đồng/PO",
@@ -103,9 +103,9 @@ SELECT
     handle_date_text("Ngay_nhan_thong_tin_tu_PM") AS "Ngày nhận thông tin từ PM",
     "HTKT",
     "Thong_bao_sale_SDM___ien_ngay_thong_bao_" as "Thông báo sale/SDM"
-FROM public."db6_H__dich_vu";
+FROM public."main_db6_H__dich_vu";
 
--- DROP VIEW public.db6_h_dich_vu_view
+-- DROP VIEW public.main_db6_h_dich_vu_view
 
 CREATE OR REPLACE VIEW public.merge_h__dich_vu_view AS
 SELECT
@@ -142,7 +142,7 @@ SELECT
     NULL AS "Ngày nhận thông tin từ SE/SDM",
     "HTKT",
     "Thông báo sale/SDM"
-FROM db4_h_dich_vu_view
+FROM main_db4_h_dich_vu_view
 
 UNION ALL
 SELECT
@@ -179,7 +179,7 @@ SELECT
     "Ngày nhận thông tin từ SE/SDM",
     "HTKT",
     "Thông báo sale/SDM"
-FROM db5_h_dich_vu_view
+FROM main_db5_h_dich_vu_view
 
 UNION ALL
 SELECT
@@ -216,7 +216,7 @@ SELECT
     NULL AS "Ngày nhận thông tin từ SE/SDM",
     "HTKT",
     "Thông báo sale/SDM"
-FROM db6_h_dich_vu_view;
+FROM main_db6_h_dich_vu_view;
 
 
 -- DROP VIEW public.merge_h__dich_vu_view
@@ -224,6 +224,6 @@ FROM db6_h_dich_vu_view;
 
 -- DROP VIEW ----------------------------------
 -- DROP VIEW public.merge_h__dich_vu_view;
--- DROP VIEW public.db4_h_dich_vu_view;
--- DROP VIEW public.db5_h_dich_vu_view;
--- DROP VIEW public.db6_h_dich_vu_view;
+-- DROP VIEW public.main_db4_h_dich_vu_view;
+-- DROP VIEW public.main_db5_h_dich_vu_view;
+-- DROP VIEW public.main_db6_h_dich_vu_view;

@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW public.invt2020_serialnumberThg1_Thg6_view AS
+CREATE OR REPLACE VIEW public.main_invt2020_serialnumberThg1_Thg6_view AS
 SELECT
     'invt2020_serialnumberThg1_Thg6'::varchar as "Source",
     "CUSTOMER__CONTRACT_ID" as "Hợp đồng",
@@ -30,11 +30,11 @@ SELECT
     handle_date_text("CUSTOMER_SERVICE_START_DATE") as "CUSTOMER_SERVICE_START_DATE",
     handle_date_text("CUSTOMER_WARRANTY_START_DATE") as "CUSTOMER_WARRANTY_START_DATE",
     "AUTHORIZATION_CODE_LICENSE_KEY"
-FROM public."invt2020_serialnumberThg1_Thg6";
+FROM public."main_invt2020_serialnumberThg1_Thg6";
 
--- DROP VIEW public.invt2020_serialnumberThg1_Thg6_view
+-- DROP VIEW public.main_invt2020_serialnumberThg1_Thg6_view
 
-CREATE OR REPLACE VIEW public.invt2021_serialnumber_view AS
+CREATE OR REPLACE VIEW public.main_invt2021_serialnumber_view AS
 SELECT
     'invt2021_serialnumber'::varchar as "Source",
     "CUSTOMER__CONTRACT_ID" as "Hợp đồng",
@@ -66,13 +66,13 @@ SELECT
     handle_date_text("CUSTOMER_SERVICE_START_DATE") as "CUSTOMER_SERVICE_START_DATE",
     handle_date_text("CUSTOMER_WARRANTY_START_DATE") as "CUSTOMER_WARRANTY_START_DATE",
     "AUTHORIZATION_CODE_LICENSE_KEY"
-FROM public."invt2021_serialnumber";
+FROM public."main_invt2021_serialnumber";
 
--- DROP VIEW public.invt2021_serialnumber_view
+-- DROP VIEW public.main_invt2021_serialnumber_view
 
 
 
-CREATE OR REPLACE VIEW public.invt2022_serialnumber_view AS
+CREATE OR REPLACE VIEW public.main_invt2022_serialnumber_view AS
 SELECT
     'invt2022_serialnumber'::varchar as "Source",
     "CUSTOMER__CONTRACT_ID" as "Hợp đồng",
@@ -105,13 +105,13 @@ SELECT
     handle_date_text("CUSTOMER_SERVICE_START_DATE") as "CUSTOMER_SERVICE_START_DATE",
     handle_date_text("CUSTOMER_WARRANTY_START_DATE") as "CUSTOMER_WARRANTY_START_DATE",
     "AUTHORIZATION_CODE_LICENSE_KEY"
-FROM public."invt2022_serialnumber";
+FROM public."main_invt2022_serialnumber";
 
--- DROP VIEW public.invt2022_serialnumber_view
+-- DROP VIEW public.main_invt2022_serialnumber_view
 
 
 
-CREATE OR REPLACE VIEW public.invt2023_serialnumber_view AS
+CREATE OR REPLACE VIEW public.main_invt2023_serialnumber_view AS
 SELECT
     'invt2023_serialnumber'::varchar as "Source",
     "CUSTOMER__CONTRACT_ID" as "Hợp đồng",
@@ -144,11 +144,11 @@ SELECT
     handle_date_text("CUSTOMER_SERVICE_START_DATE") as "CUSTOMER_SERVICE_START_DATE",
     handle_date_text("CUSTOMER_WARRANTY_START_DATE") as "CUSTOMER_WARRANTY_START_DATE",
     "AUTHORIZATION_CODE_LICENSE_KEY"
-FROM public."invt2023_serialnumber";
+FROM public."main_invt2023_serialnumber";
 
--- DROP VIEW public.invt2023_serialnumber_view
+-- DROP VIEW public.main_invt2023_serialnumber_view
 
-CREATE OR REPLACE VIEW public.invt2025_serialnumber_view AS
+CREATE OR REPLACE VIEW public.main_invt2025_serialnumber_view AS
 SELECT
     'invt2025_serialnumber'::varchar as "Source",
     "CUSTOMER__CONTRACT_ID" as "Hợp đồng",
@@ -183,9 +183,9 @@ SELECT
     handle_date_text("CUSTOMER_SERVICE_START_DATE") as "CUSTOMER_SERVICE_START_DATE",
     handle_date_text("CUSTOMER_WARRANTY_START_DATE") as "CUSTOMER_WARRANTY_START_DATE",
     "AUTHORIZATION_CODE_LICENSE_KEY"
-FROM public."invt2025_serialnumber";
+FROM public."main_invt2025_serialnumber";
 
--- DROP VIEW public.invt2025_serialnumber_view
+-- DROP VIEW public.main_invt2025_serialnumber_view
 
 
 
@@ -226,7 +226,7 @@ SELECT
     "CUSTOMER_SERVICE_START_DATE",
     "CUSTOMER_WARRANTY_START_DATE",
     "AUTHORIZATION_CODE_LICENSE_KEY"
-FROM public.invt2020_serialnumberThg1_Thg6_view
+FROM public.main_invt2020_serialnumberThg1_Thg6_view
 UNION ALL
 SELECT
     "Source",
@@ -263,7 +263,7 @@ SELECT
     "CUSTOMER_SERVICE_START_DATE",
     "CUSTOMER_WARRANTY_START_DATE",
     "AUTHORIZATION_CODE_LICENSE_KEY"
-FROM public.invt2021_serialnumber_view
+FROM public.main_invt2021_serialnumber_view
 UNION ALL
 SELECT
     "Source",
@@ -300,7 +300,7 @@ SELECT
     "CUSTOMER_SERVICE_START_DATE",
     "CUSTOMER_WARRANTY_START_DATE",
     "AUTHORIZATION_CODE_LICENSE_KEY"
-FROM public.invt2022_serialnumber_view
+FROM public.main_invt2022_serialnumber_view
 UNION ALL
 SELECT
     "Source",
@@ -337,7 +337,7 @@ SELECT
     "CUSTOMER_SERVICE_START_DATE",
     "CUSTOMER_WARRANTY_START_DATE",
     "AUTHORIZATION_CODE_LICENSE_KEY"
-FROM public.invt2023_serialnumber_view
+FROM public.main_invt2023_serialnumber_view
 UNION ALL
 SELECT
     "Source",
@@ -374,15 +374,15 @@ SELECT
     "CUSTOMER_SERVICE_START_DATE",
     "CUSTOMER_WARRANTY_START_DATE",
     "AUTHORIZATION_CODE_LICENSE_KEY"
-FROM public.invt2025_serialnumber_view;
+FROM public.main_invt2025_serialnumber_view;
 
 -- DROP VIEW public.merge_invt_view
 
 
 -- DROP ALL VIEWS
 -- DROP VIEW public.merge_invt_view;
--- DROP VIEW public.invt2020_serialnumberThg1_Thg6_view;
--- DROP VIEW public.invt2021_serialnumber_view;
--- DROP VIEW public.invt2022_serialnumber_view;
--- DROP VIEW public.invt2023_serialnumber_view;
--- DROP VIEW public.invt2025_serialnumber_view;
+-- DROP VIEW public.main_invt2020_serialnumberThg1_Thg6_view;
+-- DROP VIEW public.main_invt2021_serialnumber_view;
+-- DROP VIEW public.main_invt2022_serialnumber_view;
+-- DROP VIEW public.main_invt2023_serialnumber_view;
+-- DROP VIEW public.main_invt2025_serialnumber_view;

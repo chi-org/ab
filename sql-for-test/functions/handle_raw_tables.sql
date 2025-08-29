@@ -1,0 +1,14 @@
+select public.truncate_and_load('db4_H__cho_thue___Sua_chua');
+select public.truncate_and_load('db4_H__Dich_Vu');
+select public.truncate_and_load('db4_H__mua_ban');
+select public.truncate_and_load('db5_H__cho_thue___Sua_chua');
+select public.truncate_and_load('db5_H__Dich_Vu');
+select public.truncate_and_load('db5_H__mua_ban');
+select public.truncate_and_load('db6_H__cho_thue___Sua_chua');
+select public.truncate_and_load('db6_H__dich_vu');
+select public.truncate_and_load('db6_H__mua_ban');
+select public.truncate_and_load('invt2020_serialnumberThg1_Thg6');
+select public.truncate_and_load('invt2021_serialnumber');
+select public.truncate_and_load('invt2022_serialnumber');
+select public.truncate_and_load('invt2023_serialnumber');
+select public.truncate_and_load('invt2025_serialnumber');

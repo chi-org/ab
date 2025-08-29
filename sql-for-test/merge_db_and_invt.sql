@@ -46,7 +46,7 @@ SELECT
     "Sale",
     "PM",
     "SDM",
-    "Tên KH (viết tắt)" as "Tên KH",
+    "Tên KH",
     "EU",
     "Note",
     "Site",
@@ -78,3 +78,33 @@ SELECT
     "Tên dự án",
     "Giá trị HĐ"
 FROM public.merge_h__total_view;
+
+-- DROP VIEW public.merge_all_view;
+
+-- DROP ALL OF DEPENDED VIEWS ----------------------------------
+
+-- DROP VIEW public.merge_all_view;
+
+-- DROP VIEW public.merge_h__total_view;
+
+-- DROP VIEW public.merge_h__mua_ban_view;
+-- DROP VIEW public.main_db4_H__mua_ban_view;
+-- DROP VIEW public.main_db5_H__mua_ban_view;
+-- DROP VIEW public.main_db6_H__mua_ban_view;
+
+-- DROP VIEW public.merge_h__dich_vu_view;
+-- DROP VIEW public.main_db4_h_dich_vu_view;
+-- DROP VIEW public.main_db5_h_dich_vu_view;
+-- DROP VIEW public.main_db6_h_dich_vu_view;
+
+-- DROP VIEW public.merge_h__cho_thue_view;
+-- DROP VIEW public.main_db4_H__cho_thue_view;
+-- DROP VIEW public.main_db5_H__cho_thue_view;
+-- DROP VIEW public.main_db6_H__cho_thue_view;
+
+-- DROP VIEW public.merge_invt_view;
+-- DROP VIEW public.main_invt2020_serialnumberThg1_Thg6_view;
+-- DROP VIEW public.main_invt2021_serialnumber_view;
+-- DROP VIEW public.main_invt2022_serialnumber_view;
+-- DROP VIEW public.main_invt2023_serialnumber_view;
+-- DROP VIEW public.main_invt2025_serialnumber_view;
