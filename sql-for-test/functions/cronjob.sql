@@ -10,5 +10,10 @@ select cron.schedule(
 -- List all cron jobs
 select * from cron.job;
 
+
+-- List cron job runs
+SELECT * FROM cron.job_run_details ORDER BY start_time DESC LIMIT 20;
+
+
 -- Remove cronjob
 -- select cron.unschedule(<jobid>);
