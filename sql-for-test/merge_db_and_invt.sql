@@ -27,7 +27,7 @@ SELECT
     NULL::text AS "Vendor_Contract_ID__License_s_chassis_",
     NULL::varchar AS "Thời hạn bảo hành (tháng)",
     NULL::varchar AS "Thời hạn bảo hành hãng (tháng)",
-    "VENDOR_WARRANTY_START_DATE" as "Vendor Start Date",
+    "VENDOR_SERVICE_START_DATE" as "Vendor Start Date",
     "VENDOR_SERVICE_END_DATE" as "Vendor End Date",
     NULL::varchar AS "GAP bảo hành (tháng)",
     NULL::varchar AS "GAP HTKT (tháng)",
@@ -36,7 +36,27 @@ SELECT
     NULL::varchar AS "HTKT",
     NULL::varchar AS "Thông báo sale/SDM",
     NULL::varchar AS "Tên dự án",
-    NULL::varchar AS "Giá trị HĐ"
+    NULL::varchar AS "Giá trị HĐ",
+    "CONTACT",
+    "PO_ID",
+    "ORIGIN",
+    "DISTRIBUTOR__NCC_",
+    "CHASSIS_PART_NUMBER",
+    "PO_DATE__YYYYMMDD_",
+    "SN_ID__Khong_xoa_",
+    "CHASSIS_SERIAL_NUMBER",
+    "CUSTOMER_CONTRACT_DATE",
+    "EXPORT_DATE__YYYYMMDD_",
+    "IMPORT_DATE__YYYYMMDD_",
+    "WAREHOUSE_RECEIPT__MH_",
+    "VENDOR_WARRANTY_START_DATE",
+    "VENDOR_SERVICE_LEVEL",
+    "VENDOR_SERVICE_DESCRIPTION",
+    "WAREHOUSE_EXPORT__CK__PX_",
+    "EXPORT_FORM___PX1_CK4__",
+    "DISTRIBUTOR_WARRANTY_END_DATE",
+    "CUSTOMER_WARRANTY_START_DATE",
+    "AUTHORIZATION_CODE_LICENSE_KEY"
 FROM public.merge_invt_view
 UNION ALL
 SELECT
@@ -76,7 +96,27 @@ SELECT
     "HTKT",
     "Thông báo sale/SDM",
     "Tên dự án",
-    "Giá trị HĐ"
+    "Giá trị HĐ",
+    NULL as "CONTACT",
+    NULL as "PO_ID",
+    NULL as "ORIGIN",
+    NULL as "DISTRIBUTOR__NCC_",
+    NULL as "CHASSIS_PART_NUMBER",
+    NULL as "PO_DATE__YYYYMMDD_",
+    NULL as "SN_ID__Khong_xoa_",
+    NULL as "CHASSIS_SERIAL_NUMBER",
+    NULL as "CUSTOMER_CONTRACT_DATE",
+    NULL as "EXPORT_DATE__YYYYMMDD_",
+    NULL as "IMPORT_DATE__YYYYMMDD_",
+    NULL as "WAREHOUSE_RECEIPT__MH_",
+    NULL as "VENDOR_WARRANTY_START_DATE",
+    NULL as "VENDOR_SERVICE_LEVEL",
+    NULL as "VENDOR_SERVICE_DESCRIPTION",
+    NULL as "WAREHOUSE_EXPORT__CK__PX_",
+    NULL as "EXPORT_FORM___PX1_CK4__",
+    NULL as "DISTRIBUTOR_WARRANTY_END_DATE",
+    NULL as "CUSTOMER_WARRANTY_START_DATE",
+    NULL as "AUTHORIZATION_CODE_LICENSE_KEY"
 FROM public.merge_h__total_view;
 
 -- DROP VIEW public.merge_all_view;

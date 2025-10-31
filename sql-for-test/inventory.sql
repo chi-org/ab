@@ -148,6 +148,47 @@ FROM public."main_invt2023_serialnumber";
 
 -- DROP VIEW public.main_invt2023_serialnumber_view
 
+CREATE OR REPLACE VIEW public.main_invt2024_serialnumber_view AS
+SELECT
+    'invt2024_serialnumber'::varchar as "Source",
+    "CUSTOMER__CONTRACT_ID" as "Hợp đồng",
+    "SALE_PERSON" as "Sale",
+    "CUSTOMER" as "Tên KH",
+    "CONTACT",
+    "END_USER" as "EU",
+    "VENDOR" as "Vendor",
+    "PART_NUMBER" as "PN",
+    "QUANTITY" as "SL",
+    "DESCRIPTION" as "Mô tả",
+    "SERIAL_NUMBER" as "SN",
+    "PO_ID",
+    "ORIGIN",
+    "DISTRIBUTOR__NCC_",
+    "CHASSIS_PART_NUMBER",
+    handle_date_text("PO_DATE__YYYYMMDD_") as "PO_DATE__YYYYMMDD_",
+    "SN_ID__Khong_xoa_",
+    "CHASSIS_SERIAL_NUMBER",
+    handle_date_text("CUSTOMER_CONTRACT_DATE") as "CUSTOMER_CONTRACT_DATE",
+    handle_date_text("EXPORT_DATE__YYYYMMDD_") as "EXPORT_DATE__YYYYMMDD_",
+    handle_date_text("IMPORT_DATE__YYYYMMDD_") as "IMPORT_DATE__YYYYMMDD_",
+    "WAREHOUSE_RECEIPT__MH_",
+    handle_date_text("VENDOR_SERVICE_END_DATE") as "VENDOR_SERVICE_END_DATE",
+    handle_date_text("VENDOR_WARRANTY_END_DATE") as "VENDOR_WARRANTY_END_DATE",
+    handle_date_text("CUSTOMER_SERVICE_END_DATE") as "CUSTOMER_SERVICE_END_DATE",
+    handle_date_text("VENDOR_SERVICE_START_DATE") as "VENDOR_SERVICE_START_DATE",
+    "WAREHOUSE_EXPORT__CK__PX_",
+    "VENDOR_SERVICE_LEVEL",
+    "VENDOR_SERVICE_DESCRIPTION",
+    handle_date_text("CUSTOMER_WARRANTY_END_DATE") as "CUSTOMER_WARRANTY_END_DATE",
+    handle_date_text("VENDOR_WARRANTY_START_DATE") as "VENDOR_WARRANTY_START_DATE",
+    handle_date_text("CUSTOMER_SERVICE_START_DATE") as "CUSTOMER_SERVICE_START_DATE",
+    handle_date_text("CUSTOMER_WARRANTY_START_DATE") as "CUSTOMER_WARRANTY_START_DATE",
+    "AUTHORIZATION_CODE_LICENSE_KEY"
+FROM public."main_invt2024_serialnumber";
+
+-- DROP VIEW public.main_invt2024_serialnumber_view
+
+
 CREATE OR REPLACE VIEW public.main_invt2025_serialnumber_view AS
 SELECT
     'invt2025_serialnumber'::varchar as "Source",
@@ -189,7 +230,6 @@ FROM public."main_invt2025_serialnumber";
 
 
 
-
 CREATE OR REPLACE VIEW public.merge_invt_view AS
 SELECT
     "Source",
@@ -214,10 +254,12 @@ SELECT
     "EXPORT_DATE__YYYYMMDD_",
     "IMPORT_DATE__YYYYMMDD_",
     "WAREHOUSE_RECEIPT__MH_",
-    "VENDOR_SERVICE_END_DATE",
     "VENDOR_WARRANTY_END_DATE",
     "CUSTOMER_SERVICE_END_DATE",
     "VENDOR_SERVICE_START_DATE",
+    "VENDOR_SERVICE_END_DATE",
+    NULL::varchar as "VENDOR_SERVICE_LEVEL",
+    NULL::varchar as "VENDOR_SERVICE_DESCRIPTION",
     "WAREHOUSE_EXPORT__CK__PX_",
     NULL::varchar as "EXPORT_FORM___PX1_CK4__",
     NULL::date as "DISTRIBUTOR_WARRANTY_END_DATE",
@@ -251,10 +293,12 @@ SELECT
     "EXPORT_DATE__YYYYMMDD_",
     "IMPORT_DATE__YYYYMMDD_",
     "WAREHOUSE_RECEIPT__MH_",
-    "VENDOR_SERVICE_END_DATE",
     "VENDOR_WARRANTY_END_DATE",
     "CUSTOMER_SERVICE_END_DATE",
     "VENDOR_SERVICE_START_DATE",
+    "VENDOR_SERVICE_END_DATE",
+    NULL as "VENDOR_SERVICE_LEVEL",
+    NULL as "VENDOR_SERVICE_DESCRIPTION",
     "WAREHOUSE_EXPORT__CK__PX_",
     NULL as "EXPORT_FORM___PX1_CK4__",
     NULL::date as "DISTRIBUTOR_WARRANTY_END_DATE",
@@ -288,10 +332,12 @@ SELECT
     "EXPORT_DATE__YYYYMMDD_",
     "IMPORT_DATE__YYYYMMDD_",
     "WAREHOUSE_RECEIPT__MH_",
-    "VENDOR_SERVICE_END_DATE",
     "VENDOR_WARRANTY_END_DATE",
     "CUSTOMER_SERVICE_END_DATE",
     "VENDOR_SERVICE_START_DATE",
+    "VENDOR_SERVICE_END_DATE",
+    NULL::varchar as "VENDOR_SERVICE_LEVEL",
+    NULL::varchar as "VENDOR_SERVICE_DESCRIPTION",
     "WAREHOUSE_EXPORT__CK__PX_",
     NULL::varchar as "EXPORT_FORM___PX1_CK4__",
     NULL::date as "DISTRIBUTOR_WARRANTY_END_DATE",
@@ -325,10 +371,12 @@ SELECT
     "EXPORT_DATE__YYYYMMDD_",
     "IMPORT_DATE__YYYYMMDD_",
     "WAREHOUSE_RECEIPT__MH_",
-    "VENDOR_SERVICE_END_DATE",
     "VENDOR_WARRANTY_END_DATE",
     "CUSTOMER_SERVICE_END_DATE",
     "VENDOR_SERVICE_START_DATE",
+    "VENDOR_SERVICE_END_DATE",
+    NULL::varchar as "VENDOR_SERVICE_LEVEL",
+    NULL::varchar as "VENDOR_SERVICE_DESCRIPTION",
     "WAREHOUSE_EXPORT__CK__PX_",
     NULL::varchar as "EXPORT_FORM___PX1_CK4__",
     NULL::date as "DISTRIBUTOR_WARRANTY_END_DATE",
@@ -362,10 +410,51 @@ SELECT
     "EXPORT_DATE__YYYYMMDD_",
     "IMPORT_DATE__YYYYMMDD_",
     "WAREHOUSE_RECEIPT__MH_",
-    "VENDOR_SERVICE_END_DATE",
     "VENDOR_WARRANTY_END_DATE",
     "CUSTOMER_SERVICE_END_DATE",
     "VENDOR_SERVICE_START_DATE",
+    "VENDOR_SERVICE_END_DATE",
+    "VENDOR_SERVICE_LEVEL",
+    "VENDOR_SERVICE_DESCRIPTION",
+    "WAREHOUSE_EXPORT__CK__PX_",
+    NULL::varchar as "EXPORT_FORM___PX1_CK4__",
+    NULL::date as "DISTRIBUTOR_WARRANTY_END_DATE",
+    "CUSTOMER_WARRANTY_END_DATE",
+    "VENDOR_WARRANTY_START_DATE",
+    "CUSTOMER_SERVICE_START_DATE",
+    "CUSTOMER_WARRANTY_START_DATE",
+    "AUTHORIZATION_CODE_LICENSE_KEY"
+FROM public.main_invt2024_serialnumber_view
+UNION ALL
+SELECT
+    "Source",
+    "Hợp đồng",
+    "Sale",
+    "Tên KH",
+    "CONTACT",
+    "EU",
+    "Vendor",
+    "PN",
+    "SL",
+    "Mô tả",
+    "SN",
+    "PO_ID",
+    "ORIGIN",
+    "DISTRIBUTOR__NCC_",
+    "CHASSIS_PART_NUMBER",
+    "PO_DATE__YYYYMMDD_",
+    "SN_ID__Khong_xoa_",
+    "CHASSIS_SERIAL_NUMBER",
+    "CUSTOMER_CONTRACT_DATE",
+    "EXPORT_DATE__YYYYMMDD_",
+    "IMPORT_DATE__YYYYMMDD_",
+    "WAREHOUSE_RECEIPT__MH_",
+    "VENDOR_WARRANTY_END_DATE",
+    "CUSTOMER_SERVICE_END_DATE",
+    "VENDOR_SERVICE_START_DATE",
+    "VENDOR_SERVICE_END_DATE",
+    NULL::varchar as "VENDOR_SERVICE_LEVEL",
+    NULL::varchar as "VENDOR_SERVICE_DESCRIPTION",
     NULL::varchar as "WAREHOUSE_EXPORT__CK__PX_",
     "EXPORT_FORM___PX1_CK4__",
     "DISTRIBUTOR_WARRANTY_END_DATE",
@@ -385,4 +474,5 @@ FROM public.main_invt2025_serialnumber_view;
 -- DROP VIEW public.main_invt2021_serialnumber_view;
 -- DROP VIEW public.main_invt2022_serialnumber_view;
 -- DROP VIEW public.main_invt2023_serialnumber_view;
+-- DROP VIEW public.main_invt2024_serialnumber_view;
 -- DROP VIEW public.main_invt2025_serialnumber_view;

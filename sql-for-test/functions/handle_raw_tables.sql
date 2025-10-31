@@ -11,4 +11,5 @@ select public.truncate_and_load('invt2020_serialnumberThg1_Thg6');
 select public.truncate_and_load('invt2021_serialnumber');
 select public.truncate_and_load('invt2022_serialnumber');
 select public.truncate_and_load('invt2023_serialnumber');
+select public.truncate_and_load('invt2024_serialnumber');
 select public.truncate_and_load('invt2025_serialnumber');
