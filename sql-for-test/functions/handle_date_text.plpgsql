@@ -14,7 +14,7 @@ BEGIN
   END IF;
 
   -- If not dd/mm/yyyy or mm/dd/yyyy return NULL
-  IF date_text !~ '^\d{2}/\d{2}/\d{4}$' THEN
+  IF date_text !~ '^\d{1,2}/\d{1,2}/\d{4}$' THEN
     RETURN NULL;
   END IF;
 
